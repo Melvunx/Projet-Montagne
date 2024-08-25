@@ -1,0 +1,14 @@
+.nav-container {
+  @include flexContainer;
+
+  ul {
+    background: transparent;
+    @include flexContainer;
+    list-style: none;
+    padding: 0;
+    color: white;
+  }
+
+  .nav-link {
+  }
+}

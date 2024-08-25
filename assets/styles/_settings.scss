@@ -1,0 +1,35 @@
+$bgColor: rgb(233,233,233);
+$footerTxt: rgb(128,146,157);
+$borderColor: rgb(184,182,182);
+
+@font-face {
+  font-family: "Inter EB";
+  src: url(../fonts/Inter_24pt-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: "Merriweather Light";
+  src: url(../fonts/Merriweather-Light.ttf);
+}
+
+@mixin flexContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin imgContainer {
+  box-sizing: border-box;
+  width: 100%;
+  object-fit: cover;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.bg-container {
+  background: url(../images/bg.jpg) fixed center/cover;
+  min-height: 100vh;
+}
