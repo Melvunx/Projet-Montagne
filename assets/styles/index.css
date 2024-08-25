@@ -120,11 +120,27 @@ section h5 {
   text-align: center;
   margin: 35px 0;
   font-family: "Merriweather Light";
+  position: relative;
+}
+section h5::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  height: 1px;
+  width: 25%;
+  background: rgb(184, 182, 182);
 }
 section h5::after {
   content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 65%;
   height: 1px;
-  width: 100%;
+  width: 25%;
+  background: rgb(184, 182, 182);
 }
 section .main-story-container {
   display: -webkit-box;
