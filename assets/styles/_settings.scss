@@ -18,11 +18,17 @@ $borderColor: rgb(184,182,182);
   align-items: center;
 }
 
+@mixin columnFlex{
+  @include flexContainer;
+  flex-direction: column;
+}
+
 @mixin imgContainer {
   box-sizing: border-box;
   width: 100%;
   object-fit: cover;
 }
+
 
 * {
   padding: 0;

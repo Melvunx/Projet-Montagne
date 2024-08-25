@@ -1,11 +1,9 @@
 header {
-  @include flexContainer;
-  flex-direction: column;
+  @include columnFlex;
   min-height: 80vh;
 
   .head-content {
-    @include flexContainer;
-    flex-direction: column;
+    @include columnFlex;
     color: white;
     width: 55%;
     gap: 20px;

@@ -1,14 +1,13 @@
 .nav-container {
-  @include flexContainer;
+display: flex;
+justify-content: space-around;
 
   ul {
-    background: transparent;
     @include flexContainer;
+    gap: 20px;
     list-style: none;
     padding: 0;
     color: white;
   }
 
-  .nav-link {
-  }
 }
