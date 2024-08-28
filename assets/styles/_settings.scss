@@ -1,6 +1,8 @@
 $bgColor: rgb(233,233,233);
 $footerTxt: rgb(128,146,157);
 $borderColor: rgb(184,182,182);
+$fontInter: "Inter Eb", sans-serif;
+$fontMerr: "Merriweather Light", serif;
 
 @font-face {
   font-family: "Inter EB";
@@ -29,13 +31,58 @@ $borderColor: rgb(184,182,182);
   object-fit: cover;
 }
 
-
-* {
-  padding: 0;
-  margin: 0;
+@mixin title {
+  font-family: $fontInter;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
 }
 
-.bg-container {
+html {
+  scroll-behavior: smooth;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fontMerr;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.bg-container {  
   background: url(../images/bg.jpg) fixed center/cover;
   min-height: 100vh;
+}
+
+.btn-story {
+  @include title;
+  font-size: 0.7rem;
+  padding: 10px 25px;
+  border: black 2px solid;
+  background: none;
+  transition: 0.2s;
+  cursor: pointer;
+
+
+  &:hover {
+    background: black;
+    color: white;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+}
+
+img {
+  width: 70%;
+  box-shadow: 2px 0 9px black;
+  border-radius: 5px;
 }

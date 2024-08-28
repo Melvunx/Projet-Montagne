@@ -1,0 +1,28 @@
+footer {
+  @include flexContainer;
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background: $bgColor;
+    width: 75%;
+    margin: 30px 0;
+  }
+  
+  .form {
+    @include columnFlex;
+  }
+  
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    
+    & > div {
+      @include flexContainer;
+      border-left: 1px solid $borderColor;
+      border-bottom: 1px solid $borderColor;
+    }
+
+  }
+}

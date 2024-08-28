@@ -1,11 +1,11 @@
 header {
-  @include columnFlex;
-  min-height: 80vh;
+  position: relative;
+  min-height: 100vh;
 
   .head-content {
     @include columnFlex;
+    min-height: 100vh;
     color: white;
-    width: 55%;
     gap: 20px;
 
     h1 {
@@ -19,9 +19,33 @@ header {
   }
 
   p {
-    font-family: "Merriweather Light";
     font-style: italic;
     font-size: 0.8rem;
   }
 
+  button {
+    height: 50px;
+    width: 50px;
+    @include flexContainer;
+    background: none;
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: lightblue; 
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+
+    a {
+      font-size: 1rem;
+      color: white;
+    }
+  }
 }
