@@ -8,32 +8,28 @@ section {
   }
 
   h5 {
-    text-align: center;
-    margin: 35px 0;
-    font-family: "Merriweather Light";
+    padding: 70px 0;
     position: relative;
 
-    &::before {
+
+  &::before, &::after {
       content: "";
-      display: block;
       position: absolute;
-      top: 50%;
-      left: 10%;
+      width: 37%;
       height: 1px;
-      width: 25%;
       background: $borderColor;
+      top: 50%;
+      transform: translateY(-50%)
+    }
+
+    &::before {
+      left: 5%;
     }
 
     &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 65%;
-      height: 1px;
-      width: 25%;
-      background: $borderColor;
+      right: 5%;
     }
+
   }
 
   .main-story-container {

@@ -22,6 +22,30 @@ body {
   text-align: center;
   margin: 0 auto;
 }
+body::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.558);
+  -webkit-animation: landAnim 2s ease forwards;
+          animation: landAnim 2s ease forwards;
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+}
+@-webkit-keyframes landAnim {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes landAnim {
+  to {
+    opacity: 0;
+  }
+}
 
 .bg-container {
   background: url(../images/bg.jpg) fixed center/cover;
@@ -62,6 +86,7 @@ img {
 header {
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
 }
 header .head-content {
   display: -webkit-box;
@@ -79,7 +104,26 @@ header .head-content {
           flex-direction: column;
   min-height: 100vh;
   color: white;
-  gap: 20px;
+  gap: 50px;
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
+  -webkit-animation: headMove 1.5s forwards;
+          animation: headMove 1.5s forwards;
+}
+@-webkit-keyframes headMove {
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes headMove {
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
 }
 header .head-content h1 {
   text-align: center;
@@ -87,7 +131,7 @@ header .head-content h1 {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 4rem;
-  width: 80%;
+  max-width: 575px;
 }
 header p {
   font-style: italic;
@@ -183,7 +227,8 @@ footer .form textarea {
   height: 50%;
   padding: 8px;
 }
-footer .form input, footer .form textarea {
+footer .form input,
+footer .form textarea {
   background: none;
   border: 1px rgb(184, 182, 182) solid;
   border-radius: 5px;
@@ -235,14 +280,15 @@ footer .contact-container > div h4 {
 footer .contact-container > div p {
   font-size: 0.75rem;
   color: gray;
+  margin-left: 25%;
 }
 footer .contact-container .footer-logo {
   position: absolute;
-  left: 50%;
+  left: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
 footer .contact-container .footer-logo button {
   height: 35px;
@@ -271,15 +317,29 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background: rgba(255, 255, 255, 0.296);
-  border-radius: 3px;
-  width: 75%;
+  width: 75.08%;
   height: 50px;
   z-index: 100;
   position: absolute;
   bottom: 0;
+  opacity: 0;
   left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
+  -webkit-animation: navPop 1.5s ease forwards;
+          animation: navPop 1.5s ease forwards;
+}
+@-webkit-keyframes navPop {
+  to {
+    opacity: 1;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
+}
+@keyframes navPop {
+  to {
+    opacity: 1;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+  }
 }
 nav ul {
   display: -webkit-box;
@@ -369,30 +429,24 @@ section .section-content {
   width: 75%;
 }
 section h5 {
-  text-align: center;
-  margin: 35px 0;
-  font-family: "Merriweather Light";
+  padding: 70px 0;
   position: relative;
 }
-section h5::before {
+section h5::before, section h5::after {
   content: "";
-  display: block;
   position: absolute;
-  top: 50%;
-  left: 10%;
+  width: 37%;
   height: 1px;
-  width: 25%;
   background: rgb(184, 182, 182);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+section h5::before {
+  left: 5%;
 }
 section h5::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 65%;
-  height: 1px;
-  width: 25%;
-  background: rgb(184, 182, 182);
+  right: 5%;
 }
 section .main-story-container {
   display: -webkit-box;
@@ -495,4 +549,57 @@ section .stories-container > div p {
 section .stories-container > div button {
   position: absolute;
   bottom: 30px;
+}
+
+@media screen and (max-width: 1090px) {
+  nav .nav-logo {
+    display: none;
+  }
+  section h5::after, section h5::before {
+    width: 25%;
+  }
+}
+@media screen and (max-width: 960px) {
+  .btn {
+    font-size: 0.8rem;
+  }
+  section .stories-container {
+    display: block;
+  }
+  section .stories-container > div {
+    gap: 35px;
+  }
+  section .stories-container > div:first-of-type::after {
+    content: "";
+    background: rgb(184, 182, 182);
+    width: 100%;
+    height: 1px;
+  }
+  section .stories-container > div p {
+    font-size: 0.9rem;
+    width: 60%;
+    line-height: 40px;
+  }
+  section .stories-container > div .date {
+    font-size: 1.1rem;
+  }
+  section .stories-container > div button {
+    position: initial;
+  }
+  footer .footer-content {
+    display: block;
+  }
+  footer .footer-content .contact-container > div:first-of-type {
+    border-top: 1px solid rgb(184, 182, 182);
+  }
+}
+@media screen and (max-width: 830px) {
+  header .head-content p {
+    font-size: 1rem;
+    width: 80%;
+    line-height: 30px;
+  }
+  section .main-story-container p {
+    line-height: 50px;
+  }
 }/*# sourceMappingURL=index.css.map */

@@ -2,14 +2,22 @@ nav {
   display: flex;
   justify-content: space-between;
   background: rgba(255, 255, 255, 0.296);
-  border-radius: 3px;
-  width: 75%;
+  width: 75.08%;
   height: 50px;
   z-index: 100;
   position: absolute;
   bottom: 0;
+  opacity: 0;
   left: 50%;
-  transform: translate(-50%);
+  animation: navPop 1.5s ease forwards;
+  
+  @keyframes navPop {
+    to {
+      opacity: 1;
+      transform: translate(-50%);
+    }
+  }
+  
 
   ul {
     display: flex;

@@ -1,12 +1,23 @@
 header {
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
 
   .head-content {
     @include columnFlex;
     min-height: 100vh;
     color: white;
-    gap: 20px;
+    gap: 50px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: headMove 1.5s forwards;
+
+    @keyframes headMove {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
 
     h1 {
       text-align: center;
@@ -14,7 +25,7 @@ header {
       text-transform: uppercase;
       font-weight: bold;
       font-size: 4rem;
-      width: 80%;
+      max-width: 575px;
     }
   }
 
