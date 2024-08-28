@@ -28,7 +28,7 @@ body {
   min-height: 100vh;
 }
 
-.btn-story {
+.btn {
   font-family: "Inter Eb", sans-serif;
   font-size: 1rem;
   text-transform: uppercase;
@@ -41,13 +41,13 @@ body {
   transition: 0.2s;
   cursor: pointer;
 }
-.btn-story:hover {
+.btn:hover {
   background: black;
   color: white;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
-.btn-story:active {
+.btn:active {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
 }
@@ -159,6 +159,42 @@ footer .form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  padding: 40px;
+  gap: 15px;
+}
+footer .form label {
+  font-family: "Inter Eb", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+  color: gray;
+}
+footer .form input {
+  width: 100%;
+  padding: 8px;
+}
+footer .form textarea {
+  resize: none;
+  width: 100%;
+  height: 50%;
+  padding: 8px;
+}
+footer .form input, footer .form textarea {
+  background: none;
+  border: 1px rgb(184, 182, 182) solid;
+  border-radius: 5px;
+}
+footer .form .btn {
+  color: gray;
+  border: gray 1px solid;
+}
+footer .form .btn:hover {
+  background: rgba(119, 136, 153, 0.266);
+  color: black;
 }
 footer .contact-container {
   display: -webkit-box;
@@ -168,9 +204,17 @@ footer .contact-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 100%;
+}
+footer .contact-container h4 {
+  font-family: "Inter Eb", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: gray;
+  font-size: 0.8rem;
 }
 footer .contact-container > div {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -182,6 +226,41 @@ footer .contact-container > div {
           align-items: center;
   border-left: 1px solid rgb(184, 182, 182);
   border-bottom: 1px solid rgb(184, 182, 182);
+  padding: 60px;
+}
+footer .contact-container > div h4 {
+  position: absolute;
+  left: 8%;
+}
+footer .contact-container > div p {
+  font-size: 0.75rem;
+  color: gray;
+}
+footer .contact-container .footer-logo {
+  position: absolute;
+  left: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+footer .contact-container .footer-logo button {
+  height: 35px;
+  width: 35px;
+  border: none;
+  border-radius: 50px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+  background: rgb(233, 233, 233);
+}
+footer .contact-container .footer-logo button:hover {
+  background: rgba(119, 136, 153, 0.266);
+  color: lightseagreen;
+}
+footer .contact-container .footer-logo button:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 nav {

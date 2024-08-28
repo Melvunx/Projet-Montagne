@@ -1,6 +1,8 @@
 $bgColor: rgb(233,233,233);
-$footerTxt: rgb(128,146,157);
+$footerTxt: gray;
 $borderColor: rgb(184,182,182);
+$hoverBtn: lightseagreen;
+$hoverFooterBtn:rgba(119, 136, 153, 0.266);
 $fontInter: "Inter Eb", sans-serif;
 $fontMerr: "Merriweather Light", serif;
 
@@ -59,7 +61,7 @@ body {
   min-height: 100vh;
 }
 
-.btn-story {
+.btn {
   @include title;
   font-size: 0.7rem;
   padding: 10px 25px;
